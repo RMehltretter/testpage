@@ -44,18 +44,7 @@
     <h1>Usercentrics CMP V2 Test Page</h1>
     <img src="https://1nf2x118nwr23j3l7o2i40qd-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/190208-UCS-Logo-800px.png" alt="uc-logo">
 
-    
-    <script> window.addEventListener("ucEvent", function (e) {    
-    if( e.detail && e.detail.event == "consent_status") {
-        if(e.detail['Google Analytics'] === true) { // check for consent status of service "Google Analytics"
-            console.log('Google Analytics has consent'); // add your script here
-        } else {
-            console.log('Google Analytics has no consent'); // add your script here
-        }
-      }
-    });
-</script>
-    
+        
         <script type="application/javascript">
      UC_UI.acceptAllConsents().then(() => console.log('All consents are accepted'));
     </script>
