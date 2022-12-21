@@ -55,7 +55,15 @@
     
 
     
-    <script type="text/plain" data-usercentrics="onlyfy" src=https://imb.onlyfy.jobs/widget/iframe.js?config=h3glso6l>
+   <script type="text/javascript" id="usercentrics-window-event">
+    /*<![CDATA[*/
+    window.addEventListener("consent-event", function (e) {
+	if( e.detail && e.detail.event == "consent_status") {
+		if(e.detail['Funktionales Cookie'] === false) {window.location.replace('./de/index.html?DENY_COOKIES=FUNCTIONALITY');}
+	}
+});
+/*]]>*/
+</script>
 
 // Here you can implement custom code
 
