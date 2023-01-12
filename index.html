@@ -53,26 +53,10 @@
     <button onclick="UC_UI.updateLanguage("en");">Englisch</button>
     <button onclick="UC_UI.restartCMP();">Restart</button>
     
-
-    
-   <script type="text/javascript" id="usercentrics-window-event">
-    /*<![CDATA[*/
-    window.addEventListener("consent-event", function (e) {
-	if( e.detail && e.detail.event == "consent_status") {
-		if(e.detail['Funktionales Cookie'] === false) {window.location.replace('./de/index.html?DENY_COOKIES=FUNCTIONALITY');}
-	}
-});
-/*]]>*/
+<script type="application/javascript">
+var UC_UI.getSettingsLabels().categories;
 </script>
 
-// Here you can implement custom code
-
-</script>
-
-    
-    
-    
-   
 
                                                                                                        
      
