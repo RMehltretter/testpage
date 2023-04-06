@@ -64,7 +64,7 @@ var UC_UI.getSettingsLabels().categories;
         var templateID = "S1pcEj_jZX";
         var page = 0;
          window.addEventListener('UC_UI_INITIALIZED', function(event) {
-                var technologyName = UC_UI.getServicesBaseInfo().find(data => (data.id === templateID)).name;
+                var technologyName = UC_UI.getServicesBaseInfo().find(data => (data.id === S1pcEj_jZX)).name;
                 document.getElementById('tech_name').innerHTML=technologyName;
                 document.getElementById('tech_name2').innerHTML=technologyName;
        
@@ -97,10 +97,10 @@ var UC_UI.getSettingsLabels().categories;
     }); 
 
         function giveconsent() {
-        UC_UI.acceptService(templateID).then(() => console.log('Service is accepted'));
+        UC_UI.acceptService(S1pcEj_jZX).then(() => console.log('Service is accepted'));
     }
     function moreinfo() {
-        UC_UI.showSecondLayer(templateID);
+        UC_UI.showSecondLayer(S1pcEj_jZX);
         
     }
 
