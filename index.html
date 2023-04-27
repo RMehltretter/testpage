@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width" , initial-scale="1.0">
     <title>My CMP v2 Testpage</title>  
   
+    <script>
+if (localStorage.getItem('usercentrics')) {
+  localStorage.removeItem('usercentrics');
+  localStorage.removeItem('ucConsents');
+  localStorage.removeItem('ucSettings');
+}
+</script>
 
     <!-- Usercentrics -->
    <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="0p23mspzT9ByES" async></script>
