@@ -94,7 +94,105 @@ for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".
                                                              
 <ins class="asm_async_creative" style="display:inline-block; width:728px; height:90px;text-align:left; text-decoration:none;" data-asm-cdn="cdn.adspirit.de" data-asm-host="bfv.adspirit.de" data-asm-params="pid=17" id="p52346x0" data-asm-done="1" data-asm-pushed="1"><script data-cmp-ab="1" src="//bfv.adspirit.de/adscript.php?async=p52346x0&amp;wpcn=asm812620x1684843931052&amp;ref=https%3A%2F%2Fspielplus.bfv.de&amp;swf=-1&amp;scx=1920&amp;scy=1080&amp;wcx=728&amp;wcy=110&amp;dcx=728&amp;vis=-1&amp;tz=1684843931053&amp;pid=17"></script><div class="asmbeacon asmb2" id="" style="position: absolute; left: 0px; top: 0px;"><img class="asmbeacon" src="https://bfv.adspirit.de/adview.php?tz=1684843931334524517tzmacro&amp;&amp;pid=17&amp;kid=187&amp;wmid=412&amp;gdpr_consent=&amp;sid=5&amp;nvc=1&amp;target=-" width="1" height="1" border="0" style="width:1px; height:1px; border:0px white solid !important;"></div><a class="asmlink" target="_blank" href="https://bfv.adspirit.de/adclick.php?tz=1684843931174122759698&amp;pid=17&amp;kid=187&amp;wmid=412&amp;wsid=6&amp;gdpr_consent=&amp;sid=5&amp;ord=1684843931&amp;vlx=700&amp;target1=https%3A%2F%2Fferien.bfv.de%2Fanmeldung"><script src="//cdn.adspirit.de/adasync.min.js" async="" type="text/javascript"></script><img class="asmbannerimg" id="asmimg2769226" border="0" style="border:0px white solid !important; width:728px; height:90px;" width="728" height="90" alt="Hier klicken!" src="https://cdn.adspirit.de/banner/c1004as/187/2023-05-22/1_BFV-Ferien_728-90.gif"></a><script type="text/javascript" data-cmp-ab="1" src="https://cdn.adspirit.de/banner/asm_pageview.min.js"></script></ins>
 
- 
+	<script type="text/plain" data-usercentrics="Test Tracking"> 
+(function() {
+	if (window.drive) { return; }
+	; (function(p, l, o, w, i, n, g) {
+		if (!p[i])
+		{
+			p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+			p.GlobalSnowplowNamespace.push(i); p[i] = function() {
+				(p[i].q = p[i].q || []).push(arguments)
+			}; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1;
+			n.src = w; g.parentNode.insertBefore(n, g)
+		}
+	}
+	(window, document, 'script', '/Scripts/Custom/Foreign/Drive/latest.js', 'drive'));
+	var sso_id = '';
+	var articleType = '';
+	var contentIsPaywall = false;
+	var userType = 'anonym';
+	var contentType = 'Index';
+	var articleId = 'unknown';
+	var globalContexts = [
+		{
+			schema: 'iglu:de.drive/user_context/jsonschema/1-0-0',
+			data:
+			{
+				userType: userType
+			}
+		},
+		{
+			schema: 'iglu:de.drive/article_context/jsonschema/1-0-0',
+			data:
+			{
+				articleId: '' + articleId,
+				articleType: articleType,
+				contentType: contentType,
+				contentIsPaywall: contentIsPaywall
+			}
+		}
+	];
+	window.drive('newTracker', 'DriveTracker', 'tracking.' + document.domain.replace('dev.','').replace('www.',''), {
+		appId: 'nordsee',
+		respectDoNotTrack: false,
+		cookieDomain: '.' + document.domain.replace('dev.','').replace('www.',''),
+		contexts:
+		{
+			webPage: true
+		}
+	});
+	window.drive('addGlobalContexts', globalContexts);
+	window.drive('setUserId', '' + sso_id);
+	window.drive('enableActivityTracking', 5, 5);
+	window.drive('trackPageView');
+	function funnelentry(e) {
+		const link = e.target;
+		if (link == null) { return; }
+		if ($(link).attr('id') == null) { return;}
+		if (!$(link).attr('id').toString().toLowerCase().startsWith('subscription')) { return; }
+		var label = 'link';
+		if ($('article.WebStoryTellingShow').length > 0) { label = 'paywall'; }
+		var product = 'nordseezeitung';
+		if ($(location).attr('href').toLowerCase().indexOf('nordsee') >= 0) { product = 'nordseezeitung'; }
+		if ($(location).attr('href').toLowerCase().indexOf('zevener') >= 0) { product = 'zevenerzeitung'; }
+		if ($(location).attr('href').toLowerCase().indexOf('wesermarsch') >= 0) { product = 'kreiszeitungwesermarsch'; }
+		var price = $(link).attr('data-subscription-price');
+		window.drive('trackSelfDescribingEvent', {
+			schema: 'iglu:de.drive/subscription_context/jsonschema/1-0-0',
+			data:
+			{
+				action: 'funnel-entry',
+				label: label,
+				product: product,
+				price: price,
+				payment_method: null
+			}
+		});
+	};
+	document.addEventListener('click', funnelentry, false);
+	$(document).ready(function(e) {
+ 		if ($('.SubscriptionNewFinish').length == 0) { return; }
+		var product = 'nordseezeitung';
+		if ($(location).attr('href').toLowerCase().indexOf('nordsee') >= 0) { product = 'nordseezeitung'; }
+		if ($(location).attr('href').toLowerCase().indexOf('zevener') >= 0) { product = 'zevenerzeitung'; }
+		if ($(location).attr('href').toLowerCase().indexOf('wesermarsch') >= 0) { product = 'kreiszeitungwesermarsch'; }
+		var price = $('.SubscriptionNewFinish').attr('data-subscription-price');
+		var paymentmethod = $('.SubscriptionNewFinish').attr('data-subscription-paymentmethod');
+		window.drive('trackSelfDescribingEvent', {
+			schema: 'iglu:de.drive/subscription_context/jsonschema/1-0-0',
+			data:
+			{
+				action: 'conversion',
+				label: 'finishpage',
+				product: product,
+				price: price,
+				payment_method: paymentmethod
+			}
+		});
+	});
+})();
+</script> 
     
 </body>
 
