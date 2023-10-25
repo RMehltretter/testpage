@@ -11,7 +11,15 @@
    
     <!-- Usercentrics -->
     <script id="usercentrics-cmp" src="//app.usercentrics.eu/browser-ui/latest/loader.js"data-settings-id="ggieHSj3MrRgdy" async="" data-avoid-prefetch-services="">        
-    <!-- End Usercentrics -->
+       <script src="/xentry-frame-ui/js/xentry-frame-ui.js?v=2"></script>
+        <script>
+
+            // Enable tracking only if the user consented to it
+            if (UC_UI.getServicesBaseInfo().find(data => (data.id === "ko1w5PpFl")).consent.status) {
+                    ineum('trackSessions');
+            }
+        </script>
+        <!-- End Usercentrics -->
 
 
     <!-- Google Tag Manager -->
