@@ -16,7 +16,8 @@
     <script>
   window.addEventListener("ucEvent", function (e) {
     if(window.UC_UI && window.UC_UI.isInitialized()){
-      if(UC_UI.getServicesBaseInfo().every(x => x.consent.status === true)) {
+      if(UC_UI.getServicesBaseInfo().find(data => (data.id === "ko1w5PpFl")).consent.status
+
           //Your Logic ko1w5PpFl 
       }
     }
