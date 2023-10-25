@@ -14,6 +14,11 @@
        <script src="/xentry-frame-ui/js/xentry-frame-ui.js?v=2"></script>
         <script>
 
+             window.addEventListener('UC_UI_INITIALIZED', function(event) {
+  // initialized
+});
+
+
        if (UC_UI.isInitialized && UC_UI.getServicesBaseInfo().find(data => (data.id === "ko1w5PpFl")).consent.status) {
                     ineum('trackSessions');
             }
