@@ -12,17 +12,16 @@
     <!-- Usercentrics -->
     <script id="usercentrics-cmp" src="//app.usercentrics.eu/browser-ui/latest/loader.js"data-settings-id="ggieHSj3MrRgdy" async="" data-avoid-prefetch-services="">        
        <script src="/xentry-frame-ui/js/xentry-frame-ui.js?v=2"></script>
-        <script>
 
-             window.addEventListener('UC_UI_INITIALIZED', function(event) {
-  // initialized
-});
-
-
-       if (UC_UI.isInitialized && UC_UI.getServicesBaseInfo().find(data => (data.id === "ko1w5PpFl")).consent.status) {
-                    ineum('trackSessions');
-            }
-        </script>
+    <script>
+  window.addEventListener("ucEvent", function (e) {
+    if(window.UC_UI && window.UC_UI.isInitialized()){
+      if(UC_UI.getServicesBaseInfo().every(x => x.consent.status === true)) {
+          //Your Logic ko1w5PpFl 
+      }
+    }
+  });
+</script>
         <!-- End Usercentrics -->
 
 
