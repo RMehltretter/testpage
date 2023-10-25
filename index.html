@@ -8,23 +8,7 @@
 
     <script type="text/javascript" id="">var jsTrackingSettings=document.querySelectorAll(".js-tracking-settings");if(0<jsTrackingSettings.length){for(i=0;i<jsTrackingSettings.length;i++)jsTrackingSettings[i].addEventListener("click",function(){UC_UI.showFirstLayer()});for(i=0;i<jsTrackingSettings.length;i++)jsTrackingSettings[i].addEventListener("touch",function(){UC_UI.showFirstLayer()})};</script>
 
-    <script>
-    //First, Suppress the CMP Display
-    var UC_UI_SUPPRESS_CMP_DISPLAY=true;
-    
-    //onload to load only this function after the DOM is fully loaded
-    window.onload=function(){
-      //Add an event associated to the button id "demo"
-      document.getElementById("demo").addEventListener("click", myFunction);
-  
-      //Once "demo" is clicked, the suppress variable is set to false
-      //and you can show the first layer
-      function myFunction() {
-        UC_UI_SUPPRESS_CMP_DISPLAY=false;
-        window.UC_UI.showFirstLayer()
-      }
-    }
-  </script>
+   
     <!-- Usercentrics -->
     <script id="usercentrics-cmp" src="//app.usercentrics.eu/browser-ui/latest/loader.js"data-settings-id="ggieHSj3MrRgdy" async="" data-avoid-prefetch-services="">        
     <!-- End Usercentrics -->
