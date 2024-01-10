@@ -26,38 +26,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 
-    <script type="text/plain" data-usercentrics="Test Tracking" async=1>
-
-;(function(p,l,o,w,i,n,g){
-  if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
-  p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
-  };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
-  n.src=w;g.parentNode.insertBefore(n,g)}
-}(
-  window,
-  document,
-  "script",
-  "https://de29b666-47a3-46c3-8a6f-7c1a665e38f1.app.try-snowplow.com/v3/try.js",
-  "snowplow")
-);
-
-
-snowplow("newTracker", "try", "https://de29b666-47a3-46c3-8a6f-7c1a665e38f1.app.try-snowplow.com", {
-  appId: "try-snowplow", // you can specify your own app name here
-  platform: "web",
-  
-  contexts: {
-    webPage: true, // this sets a unique id for each page view
-    performanceTiming: true // this captures performance metrics like load times
-  }
-});
-
-// send first heartbeat after 10 seconds, and every 10 seconds thereafter
-snowplow("enableActivityTracking", { minimumVisitLength: 10, heartbeatDelay: 10 });
-snowplow("enableLinkClickTracking"); 
-snowplow("trackPageView"); 
-
-</script>
     
 
     <!-- Paste this right before your closing </head> tag -->
@@ -84,7 +52,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="javascript:UC_UI.denyAllConsents().then(UC_UI.closeCMP);" class="uc-deny-all">opt out</a>. 
 <a href="javascript:UC_UI.rejectService("N2vwT-gQn").then(UC_UI.closeCMP);" class="uc-deny-all">reject service</a>.     
                                                              
-<ins class="asm_async_creative" style="display:inline-block; width:728px; height:90px;text-align:left; text-decoration:none;" data-asm-cdn="cdn.adspirit.de" data-asm-host="bfv.adspirit.de" data-asm-params="pid=17" id="p52346x0" data-asm-done="1" data-asm-pushed="1"><script data-cmp-ab="1" src="//bfv.adspirit.de/adscript.php?async=p52346x0&amp;wpcn=asm812620x1684843931052&amp;ref=https%3A%2F%2Fspielplus.bfv.de&amp;swf=-1&amp;scx=1920&amp;scy=1080&amp;wcx=728&amp;wcy=110&amp;dcx=728&amp;vis=-1&amp;tz=1684843931053&amp;pid=17"></script><div class="asmbeacon asmb2" id="" style="position: absolute; left: 0px; top: 0px;"><img class="asmbeacon" src="https://bfv.adspirit.de/adview.php?tz=1684843931334524517tzmacro&amp;&amp;pid=17&amp;kid=187&amp;wmid=412&amp;gdpr_consent=&amp;sid=5&amp;nvc=1&amp;target=-" width="1" height="1" border="0" style="width:1px; height:1px; border:0px white solid !important;"></div><a class="asmlink" target="_blank" href="https://bfv.adspirit.de/adclick.php?tz=1684843931174122759698&amp;pid=17&amp;kid=187&amp;wmid=412&amp;wsid=6&amp;gdpr_consent=&amp;sid=5&amp;ord=1684843931&amp;vlx=700&amp;target1=https%3A%2F%2Fferien.bfv.de%2Fanmeldung"><script src="//cdn.adspirit.de/adasync.min.js" async="" type="text/javascript"></script><img class="asmbannerimg" id="asmimg2769226" border="0" style="border:0px white solid !important; width:728px; height:90px;" width="728" height="90" alt="Hier klicken!" src="https://cdn.adspirit.de/banner/c1004as/187/2023-05-22/1_BFV-Ferien_728-90.gif"></a><script type="text/javascript" data-cmp-ab="1" src="https://cdn.adspirit.de/banner/asm_pageview.min.js"></script></ins>
+
 
 <button id="demo">Load CMP</button>
 
@@ -92,7 +60,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a style="color: #000000;" href="#" onclick="UC_UI.showFirstLayer();">First Layer</a>
 
 
-   
     
 </body>
 
