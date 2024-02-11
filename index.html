@@ -79,6 +79,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a style="color: #000000;" href="#" onclick="UC_UI.showSecondLayer();">Datenschutzeinstellungen</a>
     <a style="color: #000000;" href="#" onclick="UC_UI.showFirstLayer();">First Layer</a>
 
+<script type="text/javascript">
+     window.addEventListener('UC_UI_VIEW_CHANGED', function(event) {
+  console.log('Current view is: ' + event.detail.view);
+  console.log('Previous view is: ' + event.detail.previousView);
+});
+   </script>
+
 
     
 </body>
