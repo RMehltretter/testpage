@@ -74,6 +74,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/obflD4qoXU8?si=VmpuQGt_VYzC9VUH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </script>
 
+        <script>
+        //replace the S1pcEj_jZX to the technology template id that you want!
+        var templateID = "BySu54sOjZQ";
+        
+        uc.blockElements({
+        [templateID] : '#log' // Show google maps overlay over the element with ID '12345'
+        });
+        window.addEventListener('UC_UI_INITIALIZED', function(event) {
+                var technologyName = UC_UI.getServicesBaseInfo().find(data => (data.id === templateID)).name;
+                
+ 
+            window.addEventListener("ucEvent", function (e) {
+        
+            if(e.detail.type == "explicit" && e.detail[technologyName.toString()]){
+                //replace the iframe to the code that you want show
+                document.getElementById('log').innerHTML = '<iframe src="https://embed.onefootball.com/iframe/?p=eyJrZXkiOiIiLCJwIjoiZnVzc2JhbGwtZGUiLCJwbCI6InRNR0RYQXJGIn0=" referrerpolicy="no-referrer-when-downgrade" style="width: 300px; min-width: 100%; position: absolute; top:0; left: 0; height: 100%; overflow: hidden; " width="100%" frameborder="0" allowfullscreen="" scrolling="no"></iframe>';
+                
+        }
+        });
+    });
+        
+        </script>
+
     
 </body>
 
